@@ -2,13 +2,19 @@ const Express = require("express");
 const MongoClient = require("mongodb").MongoClient;
 const cors = require("cors");
 const mongoose = require("mongoose");
-const multer = require("multer");
-const path = require("path");
-const fs = require('fs');
+const path = require('path');
+
+const upload = require("./uploadConfig");
+const userController = require("./controllers/userController");
 
 const app = Express();
 app.use(cors());
 app.use(Express.json({ limit: '50mb' }));
+
+app.use(Express.json()); // Menggunakan middleware untuk mengizinkan penggunaan JSON dalam permintaan
+app.use(Express.urlencoded({ extended: true })); // Menggunakan middleware untuk mengizinkan penggunaan URL-encoded dalam permintaan
+
+app.use('/uploads', Express.static(path.join(__dirname, 'uploads')));
 
 const CONNECTION_STRING = "mongodb+srv://bintangsiahaan21:E8Sa7Ii3eCqikNhv@netlab.yuyii8i.mongodb.net/?retryWrites=true&w=majority&appName=Netlab";
 
@@ -19,31 +25,16 @@ mongoose.connect(CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology:
   .then(() => console.log("Successfully connected to MongoDB via Mongoose"))
   .catch(err => console.error("Could not connect to MongoDB...", err));
 
-const ImageDetails = require("./imageDetails");
-
-const uploadDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
-}
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/');
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({ storage });
-
 app.listen(3000, () => {
   MongoClient.connect(CONNECTION_STRING, (error, client) => {
     if (error) throw error;
     database = client.db(DATABASENAME);
-    console.log("Successfully connected to MongoDB!");
+    console.log("Successfully connected to MongoDB (port 3000)!");
   });
 });
+
+app.post("/api/whattoeat/signup", upload.single('image'), userController.addUser);
+app.post("/api/whattoeat/login", userController.loginUser);
 
 app.get('/api/whattoeat/GetRecommendation', (request, response) => {
   database.collection("whattoeatcollection").find({}).toArray((error, result) => {
@@ -99,5 +90,3 @@ app.get('/api/whattoeat/GetRecipe', (request, response) => {
     response.send(result);
   });
 });
-
-app.use('/uploads', Express.static('uploads'));
