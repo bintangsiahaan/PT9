@@ -1,0 +1,80 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #622A0F;
+  }
+  
+  .page-title1 {
+    font-size: 45px;
+    font-family: 'EB Garamond';
+    color: #F5DEB3;
+    text-align: center;
+  }
+  
+  .page-title2 {
+    font-size: 55px;
+    font-family: 'EB Garamond';
+    font-weight: bold;
+    color: #F5DEB3;
+    text-align: center;
+  }
+
+  .signup-form {
+    background-color: #F5DEB3; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .signup-title {
+    font-size: 25px;
+    font-family: 'EB Garamond';
+    font-weight: bold;
+    color: #622A0F;
+  }
+  
+  .signup-form h2 {
+    margin-bottom: 30px;
+  }
+  
+  .input-group {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    color: #622A0F;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .signup-button {
+    background-color: #622A0F; 
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 30px;
+  }
+  
+  .signup-button:hover {
+    background-color: #A57E57; 
+  }
+  

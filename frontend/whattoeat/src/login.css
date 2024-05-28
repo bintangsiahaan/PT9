@@ -1,0 +1,99 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #622A0F; 
+  }
+  
+  .page-title1 {
+    font-size: 45px;
+    font-family: 'EB Garamond';
+    color: #F5DEB3;
+    text-align: center;
+  }
+  
+  .page-title2 {
+    font-size: 55px;
+    font-family: 'EB Garamond';
+    font-weight: bold;
+    color: #F5DEB3;
+    text-align: center;
+  }
+  
+  .login-form {
+    background-color: #F5DEB3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(156, 76, 11); 
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .login-title {
+    font-size: 25px;
+    font-family: 'EB Garamond';
+    font-weight: bold;
+    color: #622A0F;
+  }
+  
+  .login-form h2 {
+    color: #5d4037; 
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    color: #622A0F; 
+  }
+  
+  .form-group input {
+    width: 100%; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .button {
+      background-color: #622A0F; 
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 18px;
+  }
+  
+  .button:hover {
+    background-color: #A57E57;
+  }
+  
+  .signup-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .signup-link p {
+    font-size: 14px;
+  }
+  
+  .signup-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  
