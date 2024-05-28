@@ -29,7 +29,7 @@ app.listen(3000, () => {
   MongoClient.connect(CONNECTION_STRING, (error, client) => {
     if (error) throw error;
     database = client.db(DATABASENAME);
-    console.log("Successfully connected to MongoDB (port 3000)!");
+    console.log("Successfully connected to server at port 3000");
   });
 });
 
